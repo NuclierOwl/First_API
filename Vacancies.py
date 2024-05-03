@@ -40,7 +40,7 @@ class Vacancies:
         vacancies = []
         print("try read")
         if os.path.getsize("vacancies.json") > 0:
-            with open("vacancies.json", "er", encoding="utf-8") as file:
+            with open("vacancies.json", "r", encoding="utf-8") as file:
                 vacancies_prep = file.read().split('\n')
                 vacancies = [json.loads(item) for item in vacancies_prep]
         return vacancies
