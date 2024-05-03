@@ -31,7 +31,7 @@ class Vacancies:
 
     def __save_to_json(self):
         if self._vacancies:
-            file = open("vacancies.json", "+w", encoding="utf-8")
+            file = open("vacancies.json", "w", encoding="utf-8")
             vacancies = "\n".join([json.dumps(vacancy) for vacancy in self._vacancies])
             file.write(vacancies)
             file.close()
@@ -40,7 +40,7 @@ class Vacancies:
         vacancies = []
         print("try read")
         if os.path.getsize("vacancies.json") > 0:
-            with open("vacancies.json", "+r", encoding="utf-8") as file:
+            with open("vacancies.json", "er", encoding="utf-8") as file:
                 vacancies_prep = file.read().split('\n')
                 vacancies = [json.loads(item) for item in vacancies_prep]
         return vacancies
